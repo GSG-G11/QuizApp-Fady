@@ -57,3 +57,26 @@ for (let i = 0; i < options.length; i++) {
       nextQuestionBtn.disabled = true;
   });
 }
+//this function is onClick function assgined to the 'next question button'
+const submitAnswer = () => {
+  if (
+    selectedAnswer ===
+    myQuestions[randomQuestion].answers[
+      myQuestions[randomQuestion].correctAnswer
+    ]
+  ) {
+    //checking if the answer is right
+    score++;
+  }
+  // if the user selected answer, this
+  if (selectedAnswer) {
+    questionCounter++; //everytime we call it ,we increase the number of asnwered question
+    counterOfquestions.innerText = `${questionCounter}/10`;
+    renderingQuestion();
+    options.forEach((ele) => {
+      ele.classList.remove("selected");
+    });
+  }
+};
+
+renderingQuestion();
