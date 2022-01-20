@@ -27,3 +27,20 @@ startButton.addEventListener("click", () => {
   landingContainer.style.display = "none"; // hiding the intro page
   questionsContainer.style.display = "flex"; //showing the questions side
 });
+
+const renderingQuestion = () => {
+  if (questionCounter === 11) {
+    questionsContainer.style.display = "none";
+    leaderboardContainer.style.display = "block";
+    myScore.innerText = `Your score is: ${score}/10`;
+    addTolocalStorage(userName, score);
+    renderingLeaderboard(); //adding to local storage
+  }
+  if (questionCounter === 10) nextQuestionBtn.innerText = "Submit the quiz"; // changing next question item to submit
+  randomQuestion = Math.floor(Math.random() * 19); // picking a random question from the questions array
+  questionSentence.innerText = myQuestions[randomQuestion].question; //writing the question;
+  options.forEach((ele, index) => {
+    ele.innerText = myQuestions[randomQuestion].answers[index + 1]; // render question counter
+  });
+  nextQuestionBtn.disabled = true;
+};
