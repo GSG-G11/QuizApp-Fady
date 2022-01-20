@@ -86,3 +86,9 @@ renderingQuestion();
 playAgainBtn.addEventListener("click", () => {
   window.location.reload(true);
 });
+
+//storing results
+const addTolocalStorage = function (name, score) {
+  storedScores.push({ user: name, points: score });
+  localStorage.setItem("storedScores", JSON.stringify(storedScores));
+};
