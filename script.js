@@ -19,3 +19,11 @@ let score = 0;
 let randomQuestion;
 let questionCounter = 1;
 let storedScores = JSON.parse(localStorage.getItem("storedScores")) || []; //for local storage and in case of empty array
+
+// recieving the user's name
+startButton.addEventListener("click", () => {
+  if (userInput.value === "") return; //to prevent the user from entering empty strings
+  userName = userInput.value; // assign the username
+  landingContainer.style.display = "none"; // hiding the intro page
+  questionsContainer.style.display = "flex"; //showing the questions side
+});
