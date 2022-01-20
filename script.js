@@ -80,3 +80,9 @@ const submitAnswer = () => {
 };
 
 renderingQuestion();
+
+//play again button
+
+playAgainBtn.addEventListener("click", () => {
+  window.location.reload(true);
+});
