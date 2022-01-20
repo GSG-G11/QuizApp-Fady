@@ -14,6 +14,56 @@
     <title>Quiz App</title>
   </head>
   <body>
+    <header class="header">
+      <i class="fas fa-user-graduate"></i>
+      <span class="header-span">QuizApp</span>
+    </header>
+    <!-- the start of intro section -->
+
+    <div class="landing-container">
+      <h1>How to Play ?</h1>
+      <p>
+        This is an educational website,you will recive 10 questions ,each
+        question has 4 choices. You will try to choose the correct answer
+      </p>
+      <div class="user-info">
+        <input type="text" placeholder="Enter your name" class="user-name" />
+        <button class="play-button">Get Started</button>
+      </div>
+    </div>
+    <!-- the end of intro section -->
+
+    <!-- the start of questions section -->
+
+    <div class="questions-box">
+      <div class="single-question">
+        <h2 class="number-of-questions">1/10</h2>
+        <div class="random-question">
+          <p class="the-question">Question</p>
+
+          <p class="options">Option 1</p>
+          <p class="options">Option 2</p>
+          <p class="options">Option 3</p>
+          <p class="options">Option 4</p>
+        </div>
+      </div>
+      <button class="next-question-button" onclick="submitAnswer()">
+        Next Question
+      </button>
+    </div>
+
+    <!-- the end of questions section -->
+
+    <!-- the start of leaderboard section -->
+    <section class="leaderboard-container">
+      <p class="my-score">Your score is: 8/10</p>
+      <div class="leaderboard">
+        <h1 class="leaderboard-header">LEADERBOARD</h1>
+
+        <button class="play-again-btn">Play Again</button>
+      </div>
+    </section>
+    <!-- the end of leaderboard section -->
     <script src="script.js"></script>
     <script src="questions.js"></script>
   </body>
