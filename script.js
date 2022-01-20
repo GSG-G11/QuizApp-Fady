@@ -44,3 +44,16 @@ const renderingQuestion = () => {
   });
   nextQuestionBtn.disabled = true;
 };
+//getting the answer from the user
+let selectedAnswer = "";
+let selectedIndex;
+for (let i = 0; i < options.length; i++) {
+  options[i].addEventListener("click", () => {
+    nextQuestionBtn.disabled = false; //activaite the button again on any click on the answers
+    selectedAnswer = options[i].innerText; // assign the selected answer
+    options[i].classList.toggle("selected"); //styling the selected asnwer
+    selectedIndex = i;
+    if (!options[i].classList.contains("selected"))
+      nextQuestionBtn.disabled = true;
+  });
+}
