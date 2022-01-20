@@ -92,3 +92,14 @@ const addTolocalStorage = function (name, score) {
   storedScores.push({ user: name, points: score });
   localStorage.setItem("storedScores", JSON.stringify(storedScores));
 };
+
+// rendering leaderboaord
+const renderingLeaderboard = () => {
+  let sortedScores = storedScores.sort((a, b) => a.points - b.points);
+  sortedScores.forEach((ele) => {
+    rankingContainer.insertAdjacentHTML(
+      "afterend",
+      ` <p class="ranking"><span>${ele.user}</span> <span>${ele.points}</span></p>`
+    );
+  });
+};
