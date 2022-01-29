@@ -68,7 +68,7 @@ const submitAnswer = () => {
     //checking if the answer is right
     score++;
   }
-  // if the user selected answer, this
+  // if the user selected answer, this is dsd
   if (selectedAnswer) {
     questionCounter++; //everytime we call it ,we increase the number of asnwered question
     counterOfquestions.innerText = `${questionCounter}/10`;
